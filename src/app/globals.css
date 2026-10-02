@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f6eedc;
+  --ink: #2b2a26;
+}
+
+html,
+body {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
