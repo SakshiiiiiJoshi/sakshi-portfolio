@@ -10,3 +10,9 @@ export const funFacts: FunFact[] = [
   { text: "Right now I'm learning Rust." },
   { text: "Click the tortoise's shell." },
 ];
+
+export const funCopy = {
+  title: "Off the clock",
+  intro: "Pull up a log. A few things about me that aren't on the résumé.",
+  marshmallow: "My code is like this marshmallow: best slowly toasted.",
+};

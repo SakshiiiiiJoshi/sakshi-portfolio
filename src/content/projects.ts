@@ -13,8 +13,17 @@ export interface Project {
   highlights?: string[];
   links: { live?: string; repo?: string; writeup?: string };
   image?: string;
+  imageAlt?: string;
   stoneColor: StoneColor;
 }
+
+export const projectsCopy = {
+  title: "Things I've built",
+  intro: "Each stone is a project. Step on one to read the story.",
+  moreTitle: "More on GitHub",
+  moreBody: "The rest of the pond: smaller experiments, half-finished ideas and things I tinker with.",
+  moreCta: "Visit my GitHub",
+};
 
 export const projects: Project[] = [
   {

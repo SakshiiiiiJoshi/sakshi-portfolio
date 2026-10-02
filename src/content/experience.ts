@@ -36,3 +36,8 @@ export const experience: Role[] = [
     wins: ["Delivered X in N weeks", "Wrote the first test suite for Y"],
   },
 ];
+
+export const experienceCopy = {
+  title: "The road so far",
+  now: "Now",
+};
