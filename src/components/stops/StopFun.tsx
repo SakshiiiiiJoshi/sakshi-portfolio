@@ -183,14 +183,6 @@ export function StopFun({
   // capture listeners, such as the Konami detector, alive.
   useEffect(() => {
     if (!active || n === 0) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || isTypingTarget(e.target)) return;
-      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
-      if (stepRef.current(e.key === "ArrowRight" ? 1 : -1)) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    };
     let lockUntil = 0;
     const onWheel = (e: WheelEvent) => {
       const d = e.deltaY || e.deltaX;
@@ -207,13 +199,24 @@ export function StopFun({
         e.stopPropagation();
       }
     };
-    window.addEventListener("keydown", onKey, true);
     window.addEventListener("wheel", onWheel, true);
     return () => {
-      window.removeEventListener("keydown", onKey, true);
       window.removeEventListener("wheel", onWheel, true);
     };
   }, [active, n]);
+
+  // Click on SVG background notes
+  useEffect(() => {
+    const onNote = (e: Event) => {
+      const idx = (e as CustomEvent).detail?.index;
+      if (typeof idx === "number" && idx < n) {
+        // reveal all up to the note and set it to front
+        setView({ ticks: Math.max(viewRef.current.ticks, n), front: idx });
+      }
+    };
+    window.addEventListener("portfolio:fun-note", onNote);
+    return () => window.removeEventListener("portfolio:fun-note", onNote);
+  }, [n]);
 
   // Mobile: the card is a bottom sheet, so lift the scene.
   useEffect(() => {

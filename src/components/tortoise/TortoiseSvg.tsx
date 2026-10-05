@@ -159,6 +159,35 @@ export const TortoiseSvg = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(
             <path d="M97 134C97 128 104 126 110 126H140C146 126 151 130 151 136V150C130 158 118 158 97 150Z" fill={BROWN_SHADE} />
             <circle cx="124" cy="156" r="3" fill="var(--honey)" strokeWidth={1.2} />
             <path d="M102 144C118 151 130 151 146 144" stroke="var(--paper)" strokeOpacity={0.8} strokeWidth={1.2} strokeDasharray="3 3" />
+            {/* satchel label — handwritten note on the flap */}
+            <text
+              x="124"
+              y="172"
+              textAnchor="middle"
+              fontSize="7.5"
+              fontFamily="var(--nf-hand, cursive)"
+              fontWeight="500"
+              fill="var(--paper)"
+              fillOpacity={0.82}
+              stroke="none"
+              transform="rotate(-2, 124, 172)"
+            >
+              distractingly
+            </text>
+            <text
+              x="124"
+              y="181"
+              textAnchor="middle"
+              fontSize="7.5"
+              fontFamily="var(--nf-hand, cursive)"
+              fontWeight="500"
+              fill="var(--paper)"
+              fillOpacity={0.82}
+              stroke="none"
+              transform="rotate(-2, 124, 181)"
+            >
+              focused...
+            </text>
           </g>
 
           <path id="leg-fr" d={leg(272)} fill={SKIN} />

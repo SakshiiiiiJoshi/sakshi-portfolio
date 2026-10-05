@@ -145,6 +145,7 @@ h2,
 h3 {
   font-family: var(--nf-display), Georgia, serif;
   color: var(--forest);
+  letter-spacing: -0.02em;
 }
 h1 {
   font-size: var(--text-h1);
@@ -154,7 +155,7 @@ h1 {
 h2 {
   font-size: var(--text-h2);
   line-height: var(--text-h2-lh);
-  font-weight: 600;
+  font-weight: 700;
 }
 h3 {
   font-size: var(--text-h3);
@@ -187,23 +188,18 @@ h3 {
 /* utilities */
 .paper-card {
   position: relative;
-  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  background: color-mix(in srgb, var(--paper) 97%, white);
   border-radius: var(--r-lg);
   box-shadow: var(--shadow-2);
   color: var(--ink);
+  border: 1.5px solid color-mix(in srgb, var(--sage) 60%, transparent);
 }
-.paper-card::after {
-  content: "";
-  position: absolute;
-  inset: 8px;
-  border: 2px dashed var(--sage);
-  border-radius: calc(var(--r-lg) - 8px);
-  pointer-events: none;
-}
+/* no more dashed inner border — removed for cleaner look */
 .paper-card[data-variant="night"] {
   background: color-mix(in srgb, var(--night-soft) 94%, transparent);
   box-shadow: var(--shadow-2-night);
   color: var(--paper);
+  border-color: color-mix(in srgb, var(--paper) 20%, transparent);
 }
 
 .bubble {
@@ -211,7 +207,7 @@ h3 {
   background: var(--paper);
   color: var(--ink);
   border: 2px solid color-mix(in srgb, var(--forest) 70%, transparent);
-  border-radius: var(--r-blob);
+  border-radius: var(--r-lg);
   box-shadow: var(--shadow-1);
   padding: 16px 24px;
 }
@@ -253,23 +249,27 @@ h3 {
 }
 
 .chip {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-family: var(--nf-mono), ui-monospace, monospace;
   font-size: var(--text-mono);
-  line-height: var(--text-mono-lh);
-  font-weight: 500;
-  padding: 6px 10px;
+  line-height: 1;
+  font-weight: 600;
+  padding: 5px 11px;
   border-radius: var(--r-sm);
-  background: color-mix(in srgb, var(--sage) 35%, transparent);
+  background: color-mix(in srgb, var(--sage) 18%, var(--paper));
   color: var(--forest);
-  transition: transform 0.2s ease;
+  border: 1.5px solid color-mix(in srgb, var(--forest) 22%, transparent);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .chip:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px color-mix(in srgb, var(--forest) 12%, transparent);
 }
 .chip[data-variant="night"] {
-  background: color-mix(in srgb, var(--paper) 15%, transparent);
+  background: color-mix(in srgb, var(--paper) 12%, transparent);
   color: var(--paper);
+  border-color: color-mix(in srgb, var(--paper) 30%, transparent);
 }
 
 .hand {
@@ -664,17 +664,18 @@ html[data-switched][data-mode="walk"] .stage {
   top: 8vh;
   right: 4vw;
   width: min(520px, 42vw);
-  padding: 32px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
+  gap: 16px;
 }
 .hello-h1 {
   font-size: var(--text-hero);
   line-height: var(--text-hero-lh);
   min-height: calc(var(--text-hero-lh) * 1em);
   margin: 0;
+  letter-spacing: -0.03em;
 }
 .hello-word {
   display: inline-block;
@@ -686,10 +687,12 @@ html[data-switched][data-mode="walk"] .stage {
 .hello-sub {
   margin: 0;
   font-size: var(--text-body);
+  line-height: 1.65;
 }
 .hello-tagline {
   margin: 0;
-  color: var(--forest);
+  color: var(--ink-soft);
+  font-style: italic;
 }
 .hello-dot {
   display: inline-block;
@@ -834,15 +837,16 @@ html[data-switched][data-mode="walk"] .stage {
   max-height: 84dvh;
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding: 32px;
+  padding: 36px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 14px;
+  gap: 16px;
   pointer-events: auto;
 }
 .about-card h2 {
   margin: 0;
+  letter-spacing: -0.02em;
 }
 .about-bubble {
   max-width: 100%;
@@ -850,7 +854,7 @@ html[data-switched][data-mode="walk"] .stage {
 .about-bio {
   margin: 0;
   font-size: var(--text-body);
-  line-height: var(--text-body-lh);
+  line-height: 1.7;
 }
 .about-facts {
   display: flex;
@@ -861,13 +865,14 @@ html[data-switched][data-mode="walk"] .stage {
   list-style: none;
 }
 .about-care {
-  margin: 4px 0 0;
+  margin: 0;
   color: var(--forest);
+  font-size: 1.1rem;
 }
 .about-values {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 12px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -876,12 +881,18 @@ html[data-switched][data-mode="walk"] .stage {
 .about-values li {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   color: var(--moss-dark);
+  background: color-mix(in srgb, var(--sage) 12%, var(--paper));
+  border: 1px solid color-mix(in srgb, var(--sage) 45%, transparent);
+  border-radius: var(--r-md);
+  padding: 14px 12px;
 }
 .about-values strong {
   font-family: var(--nf-display), Georgia, serif;
   color: var(--forest);
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
 }
 .about-values span {
   font-size: var(--text-small);
@@ -1009,20 +1020,21 @@ html[data-switched][data-mode="walk"] .stage {
   top: 6vh;
   left: 4vw;
   width: min(42vw, 460px);
-  padding: 28px 32px;
+  padding: 32px 36px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
   pointer-events: auto;
 }
 .skills-card h2 {
   margin: 0;
+  letter-spacing: -0.02em;
 }
 .skills-intro {
   margin: 0;
   font-size: var(--text-body);
-  line-height: var(--text-body-lh);
+  line-height: 1.6;
   color: var(--ink-soft);
 }
 .skills-tip {
@@ -1210,9 +1222,9 @@ html[data-switched][data-mode="walk"] .stage {
 .projects-body {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding-top: 10px;
-  border-top: 2px dashed var(--sage);
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1.5px solid color-mix(in srgb, var(--sage) 55%, transparent);
   animation: projects-fade 0.2s ease-out both;
 }
 @keyframes projects-fade {
@@ -1391,9 +1403,9 @@ html[data-switched][data-mode="walk"] .stage {
 .experience-body {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding-top: 10px;
-  border-top: 2px dashed var(--sage);
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1.5px solid color-mix(in srgb, var(--sage) 55%, transparent);
   animation: projects-fade 0.2s ease-out both;
 }
 .experience-meta,
@@ -1622,13 +1634,12 @@ html[data-switched][data-mode="walk"] .stage {
   top: 6vh;
   left: 4vw;
   width: min(44vw, 480px);
-  padding: 28px 32px;
+  padding: 32px 36px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 10px;
+  gap: 14px;
   pointer-events: auto;
-  /* dusk: the sky tint edges the card, never the text */
   box-shadow:
     0 0 0 2px color-mix(in srgb, var(--tint) 45%, transparent),
     0 0 26px color-mix(in srgb, var(--tint) 40%, transparent),
@@ -1636,11 +1647,12 @@ html[data-switched][data-mode="walk"] .stage {
 }
 .fun-card h2 {
   margin: 0;
+  letter-spacing: -0.02em;
 }
 .fun-intro {
   margin: 0;
   font-size: var(--text-body);
-  line-height: var(--text-body-lh);
+  line-height: 1.6;
   color: var(--ink-soft);
 }
 .fun-board {
@@ -1655,17 +1667,17 @@ html[data-switched][data-mode="walk"] .stage {
   top: var(--oy);
   width: var(--fun-w);
   height: var(--note-h);
-  padding: 24px 16px 12px;
+  padding: 28px 18px 14px;
   display: block;
   text-align: left;
   font-family: var(--font-hand);
-  font-size: 1.55rem;
-  line-height: 1.15;
+  font-size: 1.45rem;
+  line-height: 1.25;
   color: var(--ink);
-  background: color-mix(in srgb, var(--paper) 86%, var(--honey));
-  border: 1.5px solid color-mix(in srgb, var(--forest) 35%, transparent);
-  border-radius: 4px;
-  box-shadow: 0 3px 0 rgb(0 0 0 / 0.1);
+  background: color-mix(in srgb, var(--paper) 90%, var(--honey));
+  border: 1.5px solid color-mix(in srgb, var(--forest) 25%, transparent);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.08), 0 1px 0 rgb(0 0 0 / 0.06);
   rotate: var(--rot);
   cursor: pointer;
   opacity: 0;

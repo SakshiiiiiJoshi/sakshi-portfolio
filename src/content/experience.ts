@@ -11,29 +11,28 @@ export interface Role {
 
 export const experience: Role[] = [
   {
-    company: "Company Now",
-    role: "Software Developer",
-    start: "2024-01",
+    company: "Freelance",
+    role: "Frontend Developer",
+    start: "2024-06",
     end: "Present",
-    summary: "One-line scope of the current role.",
-    wins: ["Shipped X that did Y", "Mentored N engineers"],
-    stack: ["TypeScript", "React"],
+    summary: "Building and designing full-stack web apps for clients and personal projects.",
+    wins: [
+      "Designed and shipped polished UIs with Next.js + Figma",
+      "Integrated REST APIs and SQL/MongoDB backends end-to-end",
+    ],
+    stack: ["Next.js", "React", "Node.js", "SQL", "MongoDB"],
   },
   {
-    company: "Company Previous",
-    role: "Software Developer",
-    start: "2022-06",
-    end: "2023-12",
-    summary: "One-line scope of the previous role.",
-    wins: ["Built X, which improved Y by Z%", "Led the migration to W"],
-  },
-  {
-    company: "Company First",
-    role: "Intern",
-    start: "2021-06",
-    end: "2022-05",
-    summary: "One-line scope of the first role.",
-    wins: ["Delivered X in N weeks", "Wrote the first test suite for Y"],
+    company: "B.E. IT Engineering",
+    role: "Student (3rd Year)",
+    start: "2022-08",
+    end: "Present",
+    location: "Mumbai, India",
+    summary: "Studying IT engineering while building real projects on the side.",
+    wins: [
+      "Built full-stack projects in React, Node.js and SQL",
+      "Learned Java, data structures and system design in-depth",
+    ],
   },
 ];
 

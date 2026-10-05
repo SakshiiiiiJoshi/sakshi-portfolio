@@ -140,7 +140,12 @@ export function FunSet() {
           const y = -280 + 80 * t * (1 - t);
           const rot = (rng(6100 + i)() - 0.5) * 12;
           return (
-            <g key={i} transform={`translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot.toFixed(1)})`}>
+            <g
+              key={i}
+              transform={`translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot.toFixed(1)})`}
+              onClick={() => window.dispatchEvent(new CustomEvent("portfolio:fun-note", { detail: { index: i } }))}
+              style={{ cursor: "pointer", pointerEvents: "auto" }}
+            >
               <rect x="-15" y="2" width="30" height="38" rx="2" fill="var(--paper)" stroke="var(--forest)" strokeWidth="2" />
               <path d="M-9 14 H9 M-9 22 H5 M-9 30 H8" stroke="var(--forest)" strokeWidth="1.5" strokeLinecap="round" opacity="0.45" />
               <rect x="-3" y="-4" width="6" height="14" rx="2" fill="var(--honey)" stroke="var(--forest)" strokeWidth="1.5" />

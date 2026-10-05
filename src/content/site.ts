@@ -19,25 +19,24 @@ export interface Site {
   timezone: string;
 }
 
-// Sample values — replace with real facts (02-content-bible.md §0) before launch.
 export const site: Site = {
-  name: "Sakshi Sample",
+  name: "Sakshi",
   displayName: "Sakshi",
-  role: "Full-Stack Software Developer",
-  location: "Pune, India",
-  yearsExperience: 3,
-  availability: "Open to full-time roles",
-  tagline: "Slow is smooth, smooth is fast.",
+  role: "Full-Stack Developer",
+  location: "Mumbai, India",
+  yearsExperience: 0,
+  availability: "Freelancing · open to contract work",
+  tagline: "Learning by doing — bugs included.",
   tortoiseName: "Pebble",
-  email: "you@example.com",
-  github: "https://github.com/example",
-  linkedin: "https://www.linkedin.com/in/example",
+  email: "joshisakshi1204@gmail.com",
+  github: "https://github.com/SakshiiiiiJoshi",
+  linkedin: "https://linkedin.com/in/sakshi-joshi300",
   twitterX: "",
   resumePdf: "/resume.pdf",
   siteUrl: "https://example.com",
-  primaryStack: ["TypeScript", "React", "Node.js", "PostgreSQL"],
-  whatYouBuild: "fast, friendly web products",
-  languages: "English, Hindi, Marathi",
+  primaryStack: ["Next.js", "React", "Node.js", "SQL"],
+  whatYouBuild: "polished web apps from design to database",
+  languages: "English, Hindi & Marathi",
   timezone: "IST (UTC+5:30)",
 };
 
@@ -82,9 +81,9 @@ export interface AboutValue {
 /** Stop 2 — About copy (02-content-bible.md §3). Bio must stay <= 90 words. */
 export const about = {
   title: "A little about me",
-  bio: `I'm ${site.displayName}, a ${site.role} based in ${site.location}. I got into code by tinkering with small websites for friends, and I've been hooked on turning messy problems into clear, calm software ever since. I like small teams, clear writing and boring technology that works. When I build something, I want it to feel as good as it works.`,
+  bio: `I'm ${site.displayName}, a ${site.role} based in ${site.location}. I'm a 3rd-year IT engineering student who builds things to learn — full-stack web apps, polished UIs and everything in between. I like solving real problems with clean code, and I'm not afraid of a good bug-hunt at midnight. ${site.tagline}`,
   facts: [
-    `${site.yearsExperience} yrs experience`,
+    "IT Engg. · 3rd year",
     site.location,
     site.languages,
     site.timezone,

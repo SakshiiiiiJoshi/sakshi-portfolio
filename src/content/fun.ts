@@ -3,11 +3,11 @@ export interface FunFact {
 }
 
 export const funFacts: FunFact[] = [
-  { text: "I brew way too much coffee." },
-  { text: "I hike on weekends and take bad photos of good views." },
-  { text: "Currently replaying my favorite cozy games." },
-  { text: "I can solve a Rubik's cube in under two minutes." },
-  { text: "Right now I'm learning Rust." },
+  { text: "I'm a classical dancer when I'm away from the keyboard." },
+  { text: "I love sketching — both UI in Figma and art on paper." },
+  { text: "I write poetry in my free time." },
+  { text: "I name my variables properly. No x, y, or temp. Ever." },
+  { text: "I have 20+ browser tabs open right now. Minimum." },
   { text: "Click the tortoise's shell." },
 ];
 

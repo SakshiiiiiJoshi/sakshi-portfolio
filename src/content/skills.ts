@@ -26,24 +26,22 @@ export const groupLabels: Record<SkillGroup, string> = {
 };
 
 export const skills: Skill[] = [
-  { name: "TypeScript", group: "frontend", level: 5 },
+  { name: "JavaScript", group: "frontend", level: 5, note: "Daily driver" },
   { name: "React", group: "frontend", level: 5 },
-  { name: "Next.js", group: "frontend", level: 4 },
-  { name: "Tailwind", group: "frontend", level: 5 },
-  { name: "GSAP", group: "frontend", level: 3 },
-  { name: "Node.js", group: "backend", level: 4 },
-  { name: "REST + GraphQL", group: "backend", level: 4 },
-  { name: "PostgreSQL", group: "data", level: 4 },
-  { name: "Prisma", group: "data", level: 3 },
+  { name: "Next.js", group: "frontend", level: 5 },
+  { name: "HTML & CSS", group: "frontend", level: 4 },
+  { name: "Figma / UI-UX", group: "frontend", level: 4, note: "Love designing before coding" },
+  { name: "Node.js / Express", group: "backend", level: 4 },
+  { name: "REST APIs", group: "backend", level: 4 },
+  { name: "Java", group: "backend", level: 3 },
+  { name: "SQL / PostgreSQL", group: "data", level: 4 },
+  { name: "MongoDB", group: "data", level: 3 },
   { name: "Git", group: "tools", level: 5 },
-  { name: "Docker", group: "tools", level: 3 },
-  { name: "Code review", group: "practices", level: 4 },
-  { name: "Accessibility", group: "practices", level: 4 },
-  { name: "Rust", group: "tools", level: 1, learning: true },
+  { name: "TypeScript", group: "tools", level: 2, learning: true },
 ];
 
 /** Stop 3 — Skills Garden copy (02-content-bible.md §4). */
 export const skillsCopy = {
   title: "What grows well",
-  intro: "Plants are skills. Taller means I use it daily; sprouts are what I'm learning.",
+  intro: "Plants are skills. Taller means I use it daily; sprouts are what I'm still learning.",
 };
